@@ -1,0 +1,29 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.0-RC'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = "MainKt"
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'net.lingala.zip4j:zip4j:2.6.4'
+    implementation 'com.fasterxml.woodstox:woodstox-core:6.2.3'
+    implementation 'me.tongfei:progressbar:0.9.0'
+    implementation 'com.github.ajalt.clikt:clikt:3.1.0'
+}
+compileKotlin {
+    kotlinOptions {
+        languageVersion = "1.5"
+        apiVersion = "1.5"
+        jvmTarget = "1.8"
+    }
+}
